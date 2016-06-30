@@ -1,5 +1,7 @@
 ## Installation for CapnProto and Protobuf
 
+- Note: All example code is mainly given by authors
+
 1. First install Docker
 2. clone directory to somewhere; cd into directory
 3. `docker build -t test_proto .`
