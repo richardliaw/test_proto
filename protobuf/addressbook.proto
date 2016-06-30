@@ -17,12 +17,12 @@ message Person {
     }
   }
 
-  oneof employment { //TODO what is Union, Void, Group, Data
-    bool unemployed = 5;
-    string employer = 6;
-    string school = 7;
-    bool selfEmployed = 8;
-  }
+  // oneof employment { //TODO what is Union, Void, Group, Data
+  //   bool unemployed = 5;
+  //   string employer = 6;
+  //   string school = 7;
+  //   bool selfEmployed = 8;
+  // }
 }
 
 message AddressBook {

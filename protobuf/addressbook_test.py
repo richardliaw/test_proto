@@ -11,7 +11,7 @@ def writeAddressBook(f):
     alice.email = "alice@example.com"
     phone = alice.phones.add()
     phone.number = "555-1212"
-    phone.type = phone.MOBILE
+    # phone.type = phone.MOBILE
     alice.school = "MIT"
 
     bob = addresses.people.add()
@@ -20,10 +20,10 @@ def writeAddressBook(f):
     bob.email = 'bob@example.com'
     bobPhone0 = bob.phones.add()
     bobPhone0.number = "555-4567"
-    bobPhone0.type = phone.HOME
+    # bobPhone0.type = phone.HOME
     bobPhone1 = bob.phones.add()
     bobPhone1.number = "555-7654"
-    bobPhone1.type = phone.WORK
+    # bobPhone1.type = phone.WORK
     bob.unemployed = True
 
     s1 = datetime.now()
@@ -34,6 +34,7 @@ def writeAddressBook(f):
 def printAddressBook(f):
 
     addresses = addressbook_pb2.AddressBook()
+    
     s1 = datetime.now()
     addresses.ParseFromString(f.read())
     s2 = datetime.now()
