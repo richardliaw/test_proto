@@ -1,4 +1,6 @@
-@0xfcb1e38590e59449;
+@0x934efea7f017fff0;
+
+const qux :UInt32 = 123;
 
 struct Person {
   id @0 :UInt32;
@@ -16,7 +18,6 @@ struct Person {
       work @2;
     }
   }
-
   employment :union {
     unemployed @4 :Void;
     employer @5 :Text;
@@ -24,8 +25,16 @@ struct Person {
     selfEmployed @7 :Void;
     # We assume that a person is only one of these.
   }
+
+  testGroup :group {
+    field1 @8 :UInt32;
+    field2 @9 :UInt32;
+    field3 @10 :UInt32;
+  }
+  extraData @11 :Data;
 }
 
 struct AddressBook {
   people @0 :List(Person);
 }
+
