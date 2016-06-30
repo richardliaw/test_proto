@@ -14,8 +14,7 @@ capnp.create_event_loop(threaded=True)
 
 
 def parse_args():
-  parser = argparse.ArgumentParser(usage='Connects to the Example thread server \
-at the given address and does some RPCs')
+  parser = argparse.ArgumentParser(usage='Connects to the Example thread server at the given address and does some RPCs')
   parser.add_argument("host", help="HOST:PORT")
 
   return parser.parse_args()
