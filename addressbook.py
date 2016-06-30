@@ -1,6 +1,7 @@
 from __future__ import print_function
 import os
 import capnp
+from datetime import datetime
 
 import addressbook_capnp
 
@@ -28,11 +29,16 @@ def writeAddressBook(file):
     bobPhones[1].type = 'work'
     bob.employment.unemployed = None
 
+    s1 = datetime.now()
     addresses.write(file)
-
+    s2 = datetime.now()
+    print("Time to write: {}".format(s2 - s1))
 
 def printAddressBook(file):
+    s1 = datetime.now()
     addresses = addressbook_capnp.AddressBook.read(file)
+    s2 = datetime.now()
+    print("Time to read: {}".format(s2 - s1))
 
     for person in addresses.people:
         print(person.name, ':', person.email)
