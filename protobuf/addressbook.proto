@@ -1,0 +1,31 @@
+package tutorial;
+
+message Person {
+  required int32 id = 1;
+  required string name = 2;
+  required string email = 3;
+  repeated PhoneNumber phones = 4;
+
+  message PhoneNumber { 
+    required string number = 1;
+    required Type type = 2;
+
+    enum Type {
+      MOBILE = 0;
+      HOME = 1;
+      WORK = 2;
+    }
+  }
+
+  oneof employment { //TODO what is Union, Void, Group, Data
+    bool unemployed = 5;
+    string employer = 6;
+    string school = 7;
+    bool selfEmployed = 8;
+  }
+}
+
+message AddressBook {
+  repeated Person people = 1;
+}
+
